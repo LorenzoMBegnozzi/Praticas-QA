@@ -18,9 +18,8 @@ test("GitHub", async ({ page }) => {
 
     if (errorAlert) {
         console.log("Erro de login detectado! Direcionando para criar uma conta!");
-
         await page.click('[data-ga-click="Sign in, switch to sign up"]')
-        
+
     } else {
         console.log("Login bem-sucedido ou sem erro.");
     }
