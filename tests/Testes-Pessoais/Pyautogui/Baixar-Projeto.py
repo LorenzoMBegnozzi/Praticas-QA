@@ -38,27 +38,6 @@ def configurar_playwright(caminho_play):
     print("Configuração do Playwright concluída!")
     print("Entrando no projeto!!!")
     os.system("code .")
-  
-  
-##==================Node.js
-def selecionar_node():
-    root = tk.Tk()
-    root.withdraw() 
-    caminho_node = filedialog.askdirectory(title="Selecione a pasta onde quer configurar o Node")    
-    if caminho_node:
-        print(f"Pasta selecionada: {caminho_node}")
-        os.chdir(caminho_node)
-        print(f"Pasta alterada para: {os.getcwd()}")
-        configurar_node(caminho_node)
-    else:
-        print("Nenhuma pasta foi selecionada.")
-
-def configurar_node(caminho_play):
-    print("Configurando Playwright...")
-    os.system("pip install selenium")
-    print("Configuração do Playwright concluída!")
-    print("Entrando no projeto!!!")
-    os.system("code .")
     
       
 def main():
