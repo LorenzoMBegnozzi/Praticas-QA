@@ -40,17 +40,16 @@ def selecionar_pasta():
 
 def configurar_playwright(caminho_play):
     print("Configurando Playwright...")
-    child = pexpect.spawn("npm init playwright@latest")  # type: ignore
+    child = pexpect.spawn("npm init playwright@latest") 
     child.expect('Press Enter to continue:')
     child.sendline('') 
     child.expect('Do you want to install Playwright? (y/n):')
     child.sendline('y')
-    child.expect(pexpect.EOF)   # type: ignore
+    child.expect(pexpect.EOF)  
     print("Configuração do Playwright concluída!")
     print("Entrando no projeto!!!")
     # Abre o projeto no VSCode
     os.system("code .")
-
 
 ##==========================Node===============================
 def selecionar_pasta_node():
