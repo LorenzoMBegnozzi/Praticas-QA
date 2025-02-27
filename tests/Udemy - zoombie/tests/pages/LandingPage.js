@@ -1,6 +1,7 @@
+const { expect } = require('@playwright/test')
 export class LadingPage {
 
-    constructor(){
+    constructor(page) {
         this.page = page
     }
 
@@ -11,7 +12,7 @@ export class LadingPage {
     async openLeadModal() {
         await this.page.getByRole('button', { name: /Aperte o play/ }).click() //clicar no botao q tem escrita nele
 
-        await expect(page.getByTestId('modal').getByRole('heading')).toHaveText('Fila de espera') // espero que o titulo do modelo modal tenha o texto fila de espera
+        await expect(this.page.getByTestId('modal').getByRole('heading')).toHaveText('Fila de espera') // espero que o titulo do modelo modal tenha o texto fila de espera
     }
 
     async submitLeadForm(name, email) {
@@ -26,5 +27,9 @@ export class LadingPage {
     async toastHaveText(message) {
         await expect(this.page.locator('.toast')).toHaveText(message)
         await expect(this.page.locator('.toast')).toBeHidden({ timeout: 5000 })
+    }
+
+    async alertHaveText(target){
+       await expect(this.page.locator('.alert')).toHaveText(target)
     }
 }
