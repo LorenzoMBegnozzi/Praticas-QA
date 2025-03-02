@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test')
-const {LadingPage} = require('./pages/LandingPage')
+const {LadingPage} = require('../pages/LandingPage')
+
+let landingPage  
 
 test("deve cadastras um lead na fila de espera", async ({ page }) => {
     const landingPage = new LadingPage(page)
